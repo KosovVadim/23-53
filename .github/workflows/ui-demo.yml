@@ -43,7 +43,7 @@ jobs:
                   page.get_by_role("button",name="Подключиться").click()
                   page.locator(".client-card").first.wait_for()
                   assert page.locator(".client-card").evaluate_all("(els) => els.map(el=>el.dataset.client)")[:4] == ["krasnodar", "vtb", "mvideo", "s7"]
-                  assert page.locator(".brand").evaluate_all("(els) => els.every(el=>el.complete && el.naturalWidth>0)")
+                  page.wait_for_function("Array.from(document.querySelectorAll('.brand')).every(el=>el.complete && el.naturalWidth>0)")
                   page.wait_for_timeout(600)
                   page.screenshot(path="ui-capture/01-clients.png")
                   page.wait_for_timeout(1200)
@@ -69,6 +69,15 @@ jobs:
                   page.wait_for_timeout(2000)
                   page.screenshot(path="ui-capture/05-assistant.png")
                   page.wait_for_timeout(1000)
+                  page.get_by_role("button",name="Предложить правку").click()
+                  page.locator("textarea[name=communication_notes]").fill("Тестовая правка интерфейса")
+                  page.get_by_role("button",name="Сохранить").click()
+                  page.locator("dialog").wait_for(state="hidden")
+                  page.get_by_role("button",name="Предыдущая версия").click()
+                  page.locator(".timeline-label.historical").wait_for()
+                  page.screenshot(path="ui-capture/06-history.png")
+                  page.get_by_role("button",name="Следующая версия").click()
+                  page.locator(".timeline-label").filter(has_text="Текущая версия").wait_for()
                   if errors:
                       raise AssertionError(errors)
               finally:
