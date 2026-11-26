@@ -40,5 +40,4 @@ window.fetch=async(input,opts={})=>{
  return error('Маршрут не найден');
 };
 sessionStorage.setItem('krok_api_key','local-demo');
-document.addEventListener('DOMContentLoaded',()=>{const badge=document.createElement('div');badge.className='demo-badge';badge.textContent='Демонстрационный режим · локальные данные';document.body.append(badge)});
 })();
