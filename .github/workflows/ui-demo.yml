@@ -42,6 +42,8 @@ jobs:
                   page.locator("input[name=key]").fill("local-demo")
                   page.get_by_role("button",name="Подключиться").click()
                   page.locator(".client-card").first.wait_for()
+                  assert page.locator(".client-card").evaluate_all("(els) => els.map(el=>el.dataset.client)")[:4] == ["krasnodar", "vtb", "mvideo", "s7"]
+                  assert page.locator(".brand").evaluate_all("(els) => els.every(el=>el.complete && el.naturalWidth>0)")
                   page.wait_for_timeout(600)
                   page.screenshot(path="ui-capture/01-clients.png")
                   page.wait_for_timeout(1200)

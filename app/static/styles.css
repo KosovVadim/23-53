@@ -37,3 +37,5 @@ dialog{width:min(470px,92vw);max-height:85dvh;border:1px solid var(--edge);borde
 .timeline button:disabled{opacity:.35}
 @media(min-width:701px){.map-screen{padding-top:9.4vh}.graph-area{height:68vh}.contact-panel{margin-top:-.4vh}.assistant-panel{padding-bottom:calc(15 * var(--s))}.segmented button{font-size:calc(12 * var(--s));font-weight:400}}
 @media(max-width:700px){.graph-area{height:auto;aspect-ratio:1.25}.graph-tools{bottom:-8px}}
+
+.client-card[data-client="mvideo"] .brand{height:calc(32 * var(--s))}.client-card[data-client="vtb"] .brand{height:calc(34 * var(--s))}.contact-body p{overflow-wrap:anywhere}.graph .person{transition:opacity .18s}.graph .person.selected rect{stroke-width:4.1}

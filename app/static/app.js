@@ -2,7 +2,7 @@
 const $=s=>document.querySelector(s), app=$('#app'), dialog=$('#dialog'), dock=$('#dock');
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const I=n=>window.ICONS[n]||'';
-const brandUrl=id=>Object.prototype.hasOwnProperty.call(window.BRANDS,id)?'data:image/webp;base64,'+window.BRANDS[id]:'';
+const brandUrl=id=>['vtb','mvideo','s7'].includes(id)?'/ui-assets/brands/'+id+'.svg':Object.prototype.hasOwnProperty.call(window.BRANDS,id)?'data:image/webp;base64,'+window.BRANDS[id]:'';
 const R={strong:'Устойчивые',developing:'Развивающиеся',weak:'Слабые',unknown:'Неизвестно'};
 const K={influences:'Влияет',reports_to:'Подчиняется',collaborates:'Сотрудничает',delegates:'Делегирует',approves:'Согласует'};
 const S={proposed:'Предложено',confirmed:'Подтверждено',rejected:'Отклонено'};
