@@ -9,3 +9,31 @@ dialog{width:min(470px,92vw);max-height:85dvh;border:1px solid var(--edge);borde
 @media(max-width:1000px){.clients{width:80vw}.map-screen{grid-template-columns: minmax(170px,22vw) minmax(0,1fr) minmax(170px,22vw);gap:8px}.panel{padding:12px}.client-head{padding-right:65px}.brand{width:70px}.graph .node-name{font-size:10px}}
 @media(max-width:700px){:root{--s:1px}.clients{width:auto;margin:24px 16px 100px;grid-template-columns:1fr;gap:12px}.client-card{height:154px}.map-screen{padding:74px 12px 105px;min-height:100dvh;grid-template-columns:1fr;gap:12px}.topbar{top:16px;left:9px;right:9px}.graph-area{order:-1;height:auto;min-height:0;aspect-ratio:1.18}.graph-tools{bottom:0}.panel{height:320px;min-height:0}.assistant-panel{order:3}.contact-panel{order:2;height:auto;min-height:235px}.contact-body .section-label{margin-top:12px}.timeline{position:relative;left:auto;right:auto;bottom:auto;order:1;margin:0 12px 20px}.dock{bottom:15px}.brand{width:85px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* Alignment against the original 3923 × 1960 vector frames. */
+:root{font-family:Mulish,Manrope,"Inter","Avenir Next","Noto Sans",Arial,sans-serif}
+.clients{gap:calc(17 * var(--s)) calc(18 * var(--s))}
+.client-card{height:calc(159 * var(--s))}
+.client-name{font-size:calc(19.6 * var(--s));font-weight:650;letter-spacing:-.015em}
+.count{font-size:calc(15.5 * var(--s));font-weight:400}
+.updates{font-size:calc(13.4 * var(--s))}
+.brand{width:calc(92 * var(--s));height:calc(56 * var(--s))}
+.client-card[data-client="mvideo"] .brand{width:calc(65 * var(--s));height:calc(38 * var(--s))}
+.client-card[data-client="s7"] .brand{width:calc(56 * var(--s));height:calc(56 * var(--s))}
+.client-card[data-client="krasnodar"] .brand{width:calc(56 * var(--s))}
+.panel-heading{margin-bottom:calc(16 * var(--s))}
+.panel-heading button svg{width:16px;height:16px}
+.contact-body h2{font-weight:550;font-size:calc(17.5 * var(--s));letter-spacing:-.015em}
+.contact-body{font-size:calc(14 * var(--s));scrollbar-width:thin;scrollbar-color:#e6e6e6 transparent}
+.contact-body .section-label{margin-top:calc(26 * var(--s))}
+.contact-body blockquote{line-height:1.35}
+.graph .node-name{font-size:10px}
+.graph .node-dept{font-size:9px}
+.graph .person.selected rect{fill:#fff;stroke:#078853}
+.graph .person.selected rect{filter:drop-shadow(0 1px 3px #13a96c30)}
+.graph .person:hover rect{fill:#eefaf5}
+.graph-tools{bottom:-6px}
+.timeline input:disabled{opacity:1;cursor:default}
+.timeline button:disabled{opacity:.35}
+@media(min-width:701px){.map-screen{padding-top:9.4vh}.graph-area{height:68vh}.contact-panel{margin-top:-.4vh}.assistant-panel{padding-bottom:calc(15 * var(--s))}.segmented button{font-size:calc(12 * var(--s));font-weight:400}}
+@media(max-width:700px){.graph-area{height:auto;aspect-ratio:1.25}.graph-tools{bottom:-8px}}
