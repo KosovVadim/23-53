@@ -39,3 +39,5 @@ dialog{width:min(470px,92vw);max-height:85dvh;border:1px solid var(--edge);borde
 @media(max-width:700px){.graph-area{height:auto;aspect-ratio:1.25}.graph-tools{bottom:-8px}}
 
 .client-card[data-client="mvideo"] .brand{height:calc(32 * var(--s))}.client-card[data-client="vtb"] .brand{height:calc(34 * var(--s))}.contact-body p{overflow-wrap:anywhere}.graph .person{transition:opacity .18s}.graph .person.selected rect{stroke-width:4.1}
+
+.contact-panel .panel-heading{margin-bottom:calc(10 * var(--s))}.contact-body .section-label:first-of-type{margin-top:calc(34 * var(--s))}.contact-body .section-label{margin-top:calc(20 * var(--s))}.contact-body .more{padding:2px 0}.graph .person:focus-visible rect{stroke-width:5}.graph image{pointer-events:none}.contact-body{padding-bottom:3px}

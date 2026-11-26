@@ -40,7 +40,7 @@ async function loadDetail(){const id=state.selected,epoch=state.epoch,t=state.gr
 function short(s,n=20){return s.length>n?s.slice(0,n-1)+'…':s}
 function displayName(n){const a=n.trim().split(/\s+/);return short(a.length===2?a[0][0]+'. '+a[1]:n,20)}
 function positions(nodes){
- const p=Object.create(null), center={x:350,y:280}, radii=[0,65,122,185,242];
+ const p=Object.create(null), center={x:350,y:280}, radii=[0,112,145,185,242];
  const all=[...nodes].sort((a,b)=>a.id.localeCompare(b.id));
  const reference=[194,55,210,300,355,130],placed=[];
  for(let i=0;i<all.length;i++){
@@ -51,7 +51,8 @@ function positions(nodes){
    const offset=j===0?0:(j%2?1:-1)*Math.ceil(j/2)*5,angle=(preferred+offset)*Math.PI/180;
    const a={x:center.x+Math.cos(angle)*radius,y:center.y+Math.sin(angle)*radius};
    const overlap=placed.reduce((s,b)=>s+Math.max(0,118-Math.abs(a.x-b.x))*Math.max(0,42-Math.abs(a.y-b.y)),0);
-   const cost=overlap*10+Math.abs(offset);
+   const centerOverlap=Math.max(0,91-Math.abs(a.x-center.x))*Math.max(0,53-Math.abs(a.y-center.y));
+   const cost=overlap*10+centerOverlap*20+Math.abs(offset);
    if(!best||cost<best.cost)best={...a,cost};
   }
   p[n.id]={x:best.x,y:best.y};placed.push(best);
